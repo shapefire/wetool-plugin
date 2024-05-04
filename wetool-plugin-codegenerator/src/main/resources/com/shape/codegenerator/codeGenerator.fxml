@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shape.codegenerator.controller.CodeGeneratorController">
+    <TabPane fx:id="fileManagerTab" prefHeight="272.0" prefWidth="600.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <Tab closable="false" text="数据源管理">
+         <content>
+            <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <TreeView fx:id="dataSourceTreeView" layoutX="-2.0" prefHeight="374.0" prefWidth="180.0" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+              </items>
+            </SplitPane>
+         </content></Tab>
+    </TabPane>
+</VBox>-->
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shape.codegenerator.controller.CodeGeneratorController">
+    <TabPane fx:id="dataSourceManagerTab" prefHeight="272.0" prefWidth="600.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <Tab closable="false" text="数据源管理">
+            <SplitPane dividerPositions="0.4816666666666667" prefHeight="160.0" prefWidth="200.0">
+                <padding>
+                    <Insets bottom="10.0" top="10.0" />
+                </padding>
+                <VBox>
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding>
+                    <TreeView fx:id="dataSourceTreeView" layoutX="-2.0" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                </VBox>
+                <VBox fx:id="dataSourceContentLoadVbox">
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding>
+                </VBox>
+            </SplitPane>
+        </Tab>
+        <Tab closable="false" text="代码生成">
+            <SplitPane dividerPositions="0.4816666666666667" prefHeight="160.0" prefWidth="200.0">
+                <padding>
+                    <Insets bottom="10.0" top="10.0" />
+                </padding>
+                <VBox>
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding>
+                   <!-- <children>
+                        <ComboBox prefWidth="150.0" />
+                        <HBox>
+                            <CheckBox />
+                            <ListView prefHeight="200.0" prefWidth="200.0">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <HBox>
+                                            <CheckBox />
+                                            <Label text="Item 1" />
+                                        </HBox>
+                                        <HBox>
+                                            <CheckBox />
+                                            <Label text="Item 2" />
+                                        </HBox>
+                                        <HBox>
+                                            <CheckBox />
+                                            <Label text="Item 3" />
+                                        </HBox>
+                                        &lt;!&ndash; Add more items as needed &ndash;&gt;
+                                    </FXCollections>
+                                </items>
+                            </ListView>
+                        </HBox>
+                    </children>-->
+                    <!-- 单选框列表 -->
+                </VBox>
+                <VBox>
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding>
+                </VBox>
+            </SplitPane>
+        </Tab>
+    </TabPane>
+</VBox>

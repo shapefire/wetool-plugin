@@ -37,6 +37,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.code4everything.boot.base.FileUtils;
 import org.code4everything.boot.base.function.VoidFunction;
 import org.code4everything.wetool.plugin.support.BaseViewController;
+import org.code4everything.wetool.plugin.support.config.WeConfig;
 import org.code4everything.wetool.plugin.support.config.WeStatus;
 import org.code4everything.wetool.plugin.support.constant.AppConsts;
 import org.code4everything.wetool.plugin.support.event.EventCenter;
@@ -81,8 +82,14 @@ public class FxUtils {
 
     private static final AtomicBoolean KEY_EVENT_SUBSCRIBED = new AtomicBoolean(false);
 
+    /**
+     * 快捷键操作集合
+     */
     private static final List<Pair<List<Integer>, Runnable>> SHORTCUT_ACTION = new ArrayList<>();
 
+    /**
+     * 全局快捷键集合
+     */
     private static final List<Pair<List<Integer>, Runnable>> GLOBAL_SHORTCUT_ACTION = new ArrayList<>();
 
     private static Method searchActionMethod;
@@ -441,7 +448,19 @@ public class FxUtils {
      * @since 1.3.0
      */
     public static void showStage() {
-        Platform.runLater(() -> getStage().show());
+        Platform.runLater(() -> {
+            WeConfig config = WeUtils.getConfig();
+            getStage().setWidth(config.getInitialize().getWidth());
+            getStage().setHeight(config.getInitialize().getHeight());
+            //判断stage 是否隐藏，若隐藏则展示 ,并且移至屏幕最前端
+            if ( getStage().isIconified()) {
+                getStage().setIconified(false);
+            }
+            if (!getStage().isShowing()) {
+                getStage().show();
+            }
+            getStage().toFront();
+        });
     }
 
     /**

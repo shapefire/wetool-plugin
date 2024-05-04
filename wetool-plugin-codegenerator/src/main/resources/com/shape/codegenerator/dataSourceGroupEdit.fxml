@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="groupEditPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shape.codegenerator.controller.DataSourceGroupEditController">
+   <children>
+      <VBox alignment="CENTER" spacing="10" prefHeight="400.0" prefWidth="600.0"  >
+         <children>
+            <HBox alignment="CENTER" spacing="10">
+               <Label text="组名称:" textAlignment="RIGHT">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="groupNameTextField" prefWidth="200" />
+            </HBox>
+            <HBox alignment="CENTER" spacing="50">
+               <Button fx:id="addGroupButton" onAction="#addGroupEvent" mnemonicParsing="false" text="新增" prefWidth="100" />
+               <Button fx:id="editGroupButton" onAction="#editGroupEvent" mnemonicParsing="false" text="更新" prefWidth="100" />
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
+

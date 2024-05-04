@@ -1,0 +1,7 @@
+{
+    "author": "shape",
+    "name": "codegenerator",
+    "version": "1.0.0",
+    "requireWetoolVersion": "1.6.0",
+    "supportedClass": "com.shape.codegenerator.CodeGeneratorSupporter"
+}
